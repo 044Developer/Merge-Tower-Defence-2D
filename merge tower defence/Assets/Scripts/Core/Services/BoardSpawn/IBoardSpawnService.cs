@@ -1,6 +1,6 @@
 namespace MergeTowerDefence.Core.Services.BoardSpawn
 {
-    public class IBoardSpawnService
+    public interface IBoardSpawnService
     {
         
     }

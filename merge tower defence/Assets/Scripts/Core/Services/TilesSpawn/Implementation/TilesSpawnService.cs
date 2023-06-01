@@ -1,6 +1,6 @@
-namespace MergeTowerDefence.Core.Services.TIlesSpawn.Implementation
+namespace MergeTowerDefence.Core.Services.TilesSpawn.Implementation
 {
-    public class TilesSpawnService
+    public class TilesSpawnService : ITilesSpawnService
     {
         
     }

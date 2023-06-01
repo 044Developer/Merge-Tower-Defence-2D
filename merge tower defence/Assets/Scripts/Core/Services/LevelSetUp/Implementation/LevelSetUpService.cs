@@ -1,7 +1,6 @@
-namespace MergeTowerDefence.Core.Services.LevelSetUp
+namespace MergeTowerDefence.Core.Services.LevelSetUp.Implementation
 {
-    public class LevelSetUpService
+    public class LevelSetUpService : ILevelSetUpService
     {
-        
     }
 }
