@@ -1,6 +1,6 @@
 namespace MergeTowerDefence.Infrastructure.Modules.CustomScreen.Implementation
 {
-    public class CustomScreenModule
+    public class CustomScreenModule : ICustomScreenModule
     {
         
     }
