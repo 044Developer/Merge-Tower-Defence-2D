@@ -1,21 +1,21 @@
 using System.Collections.Generic;
-using UnityEngine;
+using MergeTowerDefence.Core.Cells.View;
 
 namespace MergeTowerDefence.Core.Arena.Model
 {
     public interface IArenaModel
     {
-        GameObject SpawnTile { get; }
-        GameObject FinishTile { get; }
-        IEnumerable<GameObject> AllTiles { get; }
-        IEnumerable<GameObject> WayPointTiles { get; }
-        IEnumerable<GameObject> BuildingTiles { get; }
+        StartCellView SpawnTile { get; }
+        FinishCellView FinishTile { get; }
+        IEnumerable<ICellView> AllTiles { get; }
+        IEnumerable<WaypointCellView> WayPointTiles { get; }
+        IEnumerable<BuildingCellView> BuildingTiles { get; }
 
-        void RegisterSpawnTile(GameObject spawnTile);
-        void RegisterFinishTile(GameObject finishTile);
-        void RegisterRegularTile(GameObject regularTile);
-        void RegisterBuildingTile(GameObject buildingTile);
-        void RegisterWayPointTile(GameObject wayPointTile);
+        void RegisterSpawnTile(ICellView spawnTile);
+        void RegisterFinishTile(ICellView finishTile);
+        void RegisterRegularTile(ICellView regularTile);
+        void RegisterBuildingTile(ICellView buildingTile);
+        void RegisterWayPointTile(ICellView wayPointTile);
         void ClearAllTiles();
     }
 }

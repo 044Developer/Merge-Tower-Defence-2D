@@ -1,49 +1,47 @@
 using System.Collections.Generic;
-using UnityEngine;
+using MergeTowerDefence.Core.Cells.View;
 
 namespace MergeTowerDefence.Core.Arena.Model
 {
     public sealed class ArenaModel : IArenaModel
     {
-        private List<GameObject> _allTiles = new();
-        private List<GameObject> _wayPointTiles = new();
-        private List<GameObject> _buildingTiles = new();
+        private List<ICellView> _allTiles = new();
+        private List<WaypointCellView> _wayPointTiles = new();
+        private List<BuildingCellView> _buildingTiles = new();
         
-        public GameObject SpawnTile { get; private set; }
-        public GameObject FinishTile { get; private set; }
-        public IEnumerable<GameObject> AllTiles => _allTiles;
-        public IEnumerable<GameObject> WayPointTiles => _wayPointTiles;
-        public IEnumerable<GameObject> BuildingTiles => _buildingTiles;
+        public StartCellView SpawnTile { get; private set; }
+        public FinishCellView FinishTile { get; private set; }
+        public IEnumerable<ICellView> AllTiles => _allTiles;
+        public IEnumerable<WaypointCellView> WayPointTiles => _wayPointTiles;
+        public IEnumerable<BuildingCellView> BuildingTiles => _buildingTiles;
         
-        public void RegisterSpawnTile(GameObject spawnTile)
+        public void RegisterSpawnTile(ICellView spawnTile)
         {
-            SpawnTile = spawnTile;
-            _wayPointTiles.Add(spawnTile);
+            SpawnTile = spawnTile as StartCellView;
             _allTiles.Add(spawnTile);
         }
 
-        public void RegisterFinishTile(GameObject finishTile)
+        public void RegisterFinishTile(ICellView finishTile)
         {
-            FinishTile = finishTile;
-            _wayPointTiles.Add(finishTile);
+            FinishTile = finishTile as FinishCellView;
             _allTiles.Add(finishTile);
         }
 
-        public void RegisterRegularTile(GameObject regularTile)
+        public void RegisterRegularTile(ICellView regularTile)
         {
             _allTiles.Add(regularTile);
         }
 
-        public void RegisterBuildingTile(GameObject buildingTile)
+        public void RegisterBuildingTile(ICellView buildingTile)
         {
             _allTiles.Add(buildingTile);
-            _buildingTiles.Add(buildingTile);
+            _buildingTiles.Add(buildingTile as BuildingCellView);
         }
 
-        public void RegisterWayPointTile(GameObject wayPointTile)
+        public void RegisterWayPointTile(ICellView wayPointTile)
         {
             _allTiles.Add(wayPointTile);
-            _wayPointTiles.Add(wayPointTile);
+            _wayPointTiles.Add(wayPointTile as WaypointCellView);
         }
 
         public void ClearAllTiles()

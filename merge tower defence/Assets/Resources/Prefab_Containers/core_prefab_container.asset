@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: core_prefab_container
   m_EditorClassIdentifier: 
   _arenaPrefab: {fileID: 2782994262845198154, guid: db11fe4aeded7984a88481398f0ace11, type: 3}
+  _buildingCell: {fileID: 6419203300730016623, guid: 55a1625a3a99b964aa8aeec0aa92a803, type: 3}
+  _wayPointCell: {fileID: 3911804363106796805, guid: 0def9c1883b02444f8b3784de4b90475, type: 3}
+  _startCell: {fileID: 6630695986158876514, guid: 7541a54b7b4262947a51e45d0994c0d8, type: 3}
+  _finishCell: {fileID: 20747739156057650, guid: d2b565672fba50949b7b8142be091dbd, type: 3}
+  _regularCell: {fileID: 5705780274544517278, guid: b93509583eecd1745a58f78c9dd9c01f, type: 3}
